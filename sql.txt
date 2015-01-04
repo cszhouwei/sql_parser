@@ -1,0 +1,16 @@
+select aaa,bbb,ccc from table
+select aaa,bbb,ccc from table where key1=12
+select aaa,bbb,ccc from table where col1=12
+select aaa,bbb,ccc from table where col1=12 or col1="hello"
+select aaa,bbb,ccc from table where col1=12 and col2=12
+select aaa,bbb,ccc from table where col1=12 or col2="hello"
+Select aaa,bbb,ccc from table where col1<=12
+Select aaa,bbb,ccc from table where col1<=12 or col1>="hello"
+Select aaa,bbb,ccc from table where col1<=12 and col1>="hello"
+Select aaa,bbb,ccc from table where key1=12
+Select aaa,bbb,ccc from table where key1=12 and key2="hello"
+Select aaa,bbb,ccc from table where key1=12 or key1="hello"
+Select aaa,bbb,ccc from table where key1=12 and key2="hello" and Col1=-45
+Select aaa,bbb,ccc from table where key1=true and Col1=-45
+Select aaa,bbb,ccc from table where key1=12 and (key2="hello" or Col1=-45)
+Select aaa,bbb,ccc from table where (key1=12 and key2="hello") and Col1=-45

@@ -5,9 +5,6 @@
 #include <boost/spirit/include/phoenix.hpp>
 #include <boost/fusion/include/adapt_struct.hpp>
 
-#include <iostream>
-#include <string>
-
 struct CompareOp : boost::spirit::qi::symbols<char, unsigned>
 {
     enum Type
@@ -134,7 +131,7 @@ struct StringLiteral
         boost::get<std::string>(literal.value).push_back(ch);
     }
 };
-const boost::phoenix::function<StringLiteral> string_literal_func;
+static const boost::phoenix::function<StringLiteral> string_literal_func;
 
 template <typename Iterator>
 struct SQLParser : boost::spirit::qi::grammar<Iterator, SelectSQL(), boost::spirit::ascii::space_type>

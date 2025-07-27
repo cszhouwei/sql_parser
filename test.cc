@@ -1,5 +1,10 @@
 #include "sql_parser.h"
 #include <fstream>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cstring>
+#include <cstdlib>
 
 int main(int argc, char *argv[])
 {
@@ -32,7 +37,9 @@ int main(int argc, char *argv[])
             std::string::const_iterator begin = iter->begin();
             std::string::const_iterator end = iter->end();
             SelectSQL select_sql;
-            bool ret = phrase_parse(begin, end, sql_parser, boost::spirit::ascii::space, select_sql);
+            bool ret = boost::spirit::qi::phrase_parse(begin, end, sql_parser,
+                                                      boost::spirit::ascii::space,
+                                                      select_sql);
             if (ret && begin == end) {
                 if (print) {
                    std::cout << "phrase_parse succ. sql=" << *iter << std::endl;

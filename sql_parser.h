@@ -4,6 +4,10 @@
 #include <boost/spirit/include/qi.hpp>
 #include <boost/spirit/include/phoenix.hpp>
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/variant.hpp>
+#include <string>
+#include <vector>
+#include <iostream>
 
 struct CompareOp : boost::spirit::qi::symbols<char, unsigned>
 {
